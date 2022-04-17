@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="col-12">
+		<div class="container" >
+			<div  class="card">
+
+
+				<div class="col-sm-13" align="center">
+					<div class="panel-body" align="center">
+						<div class="card-header bg-info text-center text-white">
+							<h3>List Of Courses</h3>
+						</div>
+
+						<table class="table">
+							<thead class="thead-dark">
+								<tr>
+									<th>Course ID</th>
+									<th>Course Name</th>
+									<th>Duration</th>
+									<th>edit</th>
+									<th>delete</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="course :${list}">
+									<td th:text="${course.id}">Course ID</td>
+									<td th:text="${course.coursename}">Course Name</td>
+									<td th:text="${course.duration}">Duration</td>
+									<td><a th:href="@{'/Course/edit/' + ${course.id}} "
+										class="btn btn-warning">Edit</a></td>
+									<td><a th:href="@{'/Course/delete/' + ${course.id}}"
+										class="btn btn-danger">Delete</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<a th:href="@{/Course/addcourse}" class="btn btn-success ">Add
+							Course <i class="fa fa-plus-square" aria-hidden="true"></i>
+						</a> <a th:href="@{/student/}" class="btn btn-primary">Go to Home</a>
+					</div>
+				</div>
+
+				</tr>
+
+				</tbody>
+				</table>
+				</div>
+			</div>
+			</div>
+</body>
+</html>
