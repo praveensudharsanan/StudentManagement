@@ -4,61 +4,61 @@
  <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
 </head>
 <body>
-<div class="col-5">
-<div class="container">
+<div class="col-12">
+<div class="container" >
 
-		<div class="card">
-			<div class="card-header bg-info text-center text-white">
+		<div class="card" align="center">
+			<div class="card-header bg-primary text-white text-center">
 				<h3>Register Students</h3>
 			</div>
 			<div class="card-body">
-				<form th:action="@{/student/save}" method="POST" id="studentForm">
-					<div class="row">
-						<div class="col-2">
+				<form th:action="@{/student/save}" method="POST" id="studentForm" >
+					<div class="row" >
+						<div class="col-5" >
 							<label for="firstName"><b>FIRST NAME</b></label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="text" name="firstName" id="firstName"
-								class="form-control" />
+								class="form-control"  required="required"/>
 						</div>
 					</div> <br/>
 					
 					<div class="row">
-						<div class="col-2">
+						<div class="col-5">
 							<label for="lastName"><b>LAST NAME</b></label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="text" name="lastName" id="lastName"
-								class="form-control" />
+								class="form-control" required="required" />
 						</div>
 					</div> <br/>
 					
 					<div class="row">
-						<div class="col-2">
+						<div class="col-5">
 							<label for="age"><b>AGE</b></label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="text" name="age" id="age"
-								class="form-control" />
+								class="form-control" required="required" />
 						</div>
 					</div><br/>
 					<div class="row">
-						<div class="col-2">
+						<div class="col-5">
 							<label for="email"><b>EMAIL</b></label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="text" name="email" id="email"
-								class="form-control" />
+								class="form-control" required="required"/>
 						</div>
 					</div> <br/>
 					
 					<div class="row">
-						<div class="col-2">
+						<div class="col-5">
 							<label for="gender"><b>GENDER</b></label>
 						</div>
-						<div class="col-4">
+						<div class="col-5">
 							<input type="text" name="gender" id="gender"
-								class="form-control" />
+								class="form-control" required="required"/>
 						</div>
 					</div> <br/>
 					<button type="submit" class="btn btn-success">Save Student <i class="fa fa-plus-square" aria-hidden="true"></i></button>              

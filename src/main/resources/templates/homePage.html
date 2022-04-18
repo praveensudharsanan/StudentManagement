@@ -8,10 +8,16 @@
 <div class="container" >
 
 		<div class="card" align="center">
-			<div class="card-header bg-info text-center text-white">
+			<div class="card-header bg-primary text-white text-center">
 				<h3>Student Management Application</h3>
 			</div>
 			<div class="card-body">
+			  <form th:action="@{/logout}" method="post">
+            <p>
+                Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+            </p>
+            <input type="submit" value="Sign Out" />
+        </form>
 					<form>
 					<a th:href="@{/student/getAllStudents}" class= "btn btn-success ">Manage Students<i class="fa fa-plus-square" aria-hidden="true"></i></a>               
 					<a th:href="@{/Course/getAllCourses}" class= "btn btn-success ">Manage Courses<i class="fa fa-plus-square" aria-hidden="true"></i></a>               

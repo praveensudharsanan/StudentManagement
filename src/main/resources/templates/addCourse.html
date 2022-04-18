@@ -1,14 +1,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Student Management</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
     <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
 </head>
 <body>
+<div class="container">
+<div class="card">
 <div align="center">
-    <h1>Create New Course</h1>
-    <br />
+    <div class="card-header bg-primary text-white text-center">
+            <h3>Add Course</h3>
+        </div>
      <div class="col-sm-4">
     <form action="#" th:action="@{/Course/save}" th:object="${course}" method="post">
  
@@ -17,8 +20,8 @@
             <tr>
                 <label class="form-label" >Course Name</label>
                 <td>
-                <input type="hidden" th:field="*{id}" />
-                <input type="text" th:field="*{coursename}" class="form-control" placeholder="Course Name" />
+                <input type="hidden" th:field="*{id}" / >
+                <input type="text" th:field="*{coursename}" class="form-control" placeholder="Course Name" required="required" />
                 </td>
             </tr>
          </div>  
@@ -29,17 +32,24 @@
                 <label class="form-label" >Duration</label>
                 
                 <td>
-                 <input type="text" th:field="*{duration}" class="form-control" placeholder="Duration" />
+                 <input type="text" th:field="*{duration}" class="form-control" placeholder="Duration" required="required"/>
                 </td>
             </tr>
          </div>  
  
 <br>
             <tr>
-            <td colspan="2"><button type="submit" class="btn btn-info">Save</button> </td>
+            <td colspan="2"><button type="submit" class="btn btn-success">Save</button> </td>
             </tr>
+           <a th:href="@{/Course/getAllCourses}" class= "btn btn-primary">Go Back</a>
+           
  
     </form>
 </div>
+
+</div>
+
+</div>
+
 </body>
 </html>
