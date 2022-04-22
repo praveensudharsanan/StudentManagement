@@ -10,9 +10,6 @@ import com.student.model.Student;
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
 	@Query(value="select * from student e where e.first_name like %:keyword% or e.last_name like %:keyword%",nativeQuery=true)
-	
-	
-	
 	 List<Student> findByKeyword(@Param("keyword") String keyword);
 
 }

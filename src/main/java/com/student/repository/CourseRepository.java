@@ -12,8 +12,5 @@ import com.student.model.Student;
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Long>{
 	@Query(value="select * from course e where e.coursename like %:keyword%",nativeQuery=true)
-	
-	
-	
 	 List<Course> findByKeyword(@Param("keyword") String keyword);
 }
