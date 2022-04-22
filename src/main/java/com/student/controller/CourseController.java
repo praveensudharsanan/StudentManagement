@@ -34,12 +34,22 @@ public class CourseController {
     
     @GetMapping("/getAllCourses")
     public String getAllCourses(
-            @RequestParam(value = "message", required = false) String message,
+            @RequestParam(value = "message", required = false) String message,String keyword,
             Model model
             ) {
-       List<Course> courses= service.listAll();
-       model.addAttribute("list", courses);
-       model.addAttribute("message", message);
+        List<Course> courses= service.listAll();
+        List<Course> filteredcourse= service.findByKeyword(keyword);
+
+        model.addAttribute("message", message);
+
+    	if(keyword != null) {
+    	       model.addAttribute("list", filteredcourse);
+
+    		
+    	}else {
+    	      model.addAttribute("list", courses);
+
+    	}
        return "Course";
     }
  

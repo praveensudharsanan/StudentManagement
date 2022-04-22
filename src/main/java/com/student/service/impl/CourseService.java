@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.student.model.Course;
+import com.student.model.Student;
 import com.student.repository.CourseRepository;
 
 @Service
@@ -29,5 +30,9 @@ public class CourseService
     public void delete(long id) {
         repo.deleteById(id);
     }
+public List<Course> findByKeyword(String keyword) {
+    	
+		return repo.findByKeyword(keyword);
+	}
 
 }

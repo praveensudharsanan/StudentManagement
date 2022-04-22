@@ -19,7 +19,11 @@
 					<div class="panel-body" >
 						<div class="card-header bg-primary text-white text-center">
 							<h3>List Of Courses</h3>
-						</div>
+						</div><br>
+						<form th:action="@{/Course/getAllCourses}"  method="get">
+						<input id="txtsearch" type="text" name="keyword" required>
+						<button class= "btn btn-primary " type="submit">Search</button>
+						</form><br>
 
 						<table class="table">
 							<thead class="thead-dark">

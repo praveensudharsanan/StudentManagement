@@ -46,4 +46,9 @@ public class StudentServiceImpl implements IStudentService{
     public void updateStudent(Student student) {
        repo.save(student);
     }
+    
+    public List<Student> findByKeyword(String keyword) {
+    	
+		return repo.findByKeyword(keyword);
+	}
 }

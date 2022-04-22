@@ -14,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.student.exception.StudentNotFoundException;
 import com.student.model.Student;
+import com.student.repository.StudentRepository;
 import com.student.service.IStudentService;
 
 	@Controller
@@ -50,14 +51,23 @@ import com.student.service.IStudentService;
 
 	    @GetMapping("/getAllStudents")
 	    public String getAllStudents(
-	            @RequestParam(value = "message", required = false) String message,
+	            @RequestParam(value = "message", required = false) String message,String keyword,
 	            Model model
 	            ) {
-	       List<Student> students= service.getAllStudents();
-	       model.addAttribute("list", students);
-	       model.addAttribute("message", message);
-	       return "allStudentsPage";
+	    		List<Student> students= service.getAllStudents();
+	   	       model.addAttribute("message", message);
+	    	if(keyword !=null) {
+	    		List<Student> filteredresult=service.findByKeyword(keyword);
+	    		model.addAttribute("list",filteredresult);
+	    	}
+	    	else {
+		   	       model.addAttribute("list", students);
+
+	    	}
+		       return "allStudentsPage";
+
 	    }
+
 	    
 
 	    @GetMapping("/edit")

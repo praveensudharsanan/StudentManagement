@@ -7,6 +7,7 @@ import com.student.model.Course;
 public interface ICourseService {
 
     public List<Course> getAllCourses();
+    public List<Course> findByKeyword(String keyword);
 
 
 }
